@@ -79,7 +79,6 @@ section {
 
 
 .nav-links a {
-  declared: none;
   text-decoration: none;
   color: var(--text-light);
   font-size: 15px;
@@ -243,3 +242,87 @@ section {
   color: #cfcfcf;
 }
 
+/* PROJECTS SECTION */
+
+.projects {
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.project-card {
+  background-color: var(--black-secondary);
+  padding: 30px;
+  text-align: left;
+  border-top: 3px solid var(--green-primary);
+}
+
+
+
+@media (max-width: 1024px) {
+
+  .hero-content {
+    width: 90%;
+  }
+
+  .services-grid,
+  .projects-grid,
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .services-grid,
+  .projects-grid,
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+}
+
+
+
+.contact {
+  padding: 80px 5%;
+  max-width: 700px;
+}
+
+.contact-form p {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--black-secondary);
+  border: 1px solid #333;
+  color: var(--text-light);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  margin-top: 20px;
+}

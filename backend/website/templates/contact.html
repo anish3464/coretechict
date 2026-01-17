@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="services-preview">
-    <h2>Our Services</h2>
-    <p style="text-align:center;">Detailed service pages coming next.</p>
+
+<section class="contact">
+    <h2>Contact Us</h2>
+    <p class="section-intro">
+        Get in touch with our team to discuss your ICT requirements.
+    </p>
+
+    <form class="contact-form">
+        {{ form.as_p }}
+        <button type="submit" class="btn-primary">Send Message</button>
+    </form>
 </section>
+
 {% endblock %}

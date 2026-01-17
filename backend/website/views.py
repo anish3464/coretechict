@@ -28,3 +28,9 @@ def collaboration(request):
 def digital_transformation(request):
     return render(request, 'services/digital_transformation.html')
 
+from .forms import ContactForm
+
+def contact(request):
+    form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
