@@ -1,7 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <section class="services-preview">
     <h2>Our Services</h2>
-    <p style="text-align:center;">Detailed service pages coming next.</p>
+
+    <div class="services-grid">
+        <a href="/services/cyber-security/" class="service-card">
+            <h3>Cyber Security</h3>
+            <p>End-to-end protection for modern digital environments.</p>
+        </a>
+
+        <a href="/services/network-security/" class="service-card">
+            <h3>Network Security</h3>
+            <p>Secure, high-performance enterprise networks.</p>
+        </a>
+
+        <a href="/services/collaboration/" class="service-card">
+            <h3>Collaboration Solutions</h3>
+            <p>Digital workplaces and smart meeting rooms.</p>
+        </a>
+
+        <a href="/services/digital-transformation/" class="service-card">
+            <h3>Digital Transformation</h3>
+            <p>Technology-driven business modernization.</p>
+        </a>
+    </div>
 </section>
+
 {% endblock %}

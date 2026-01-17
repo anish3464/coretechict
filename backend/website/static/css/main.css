@@ -11,20 +11,44 @@ body {
   background-color: var(--black-primary);
   color: var(--text-light);
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 
 /* NAVBAR */
 
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+section {
+  max-width: 1400px;
+  margin: auto;
+}
+
+
 .navbar {
   background-color: var(--black-secondary);
-  padding: 16px 0;
+  height: 90px;              
+  display: flex;
+  align-items: center; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);     
 }
 
 .nav-container {
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  padding: 0 60px;   /* CONTROLLED breathing room */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
 .nav-logo a {
@@ -45,6 +69,14 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.nav-logo img {
+  max-height: 150px;   /* VISUALLY BIG */
+  width: auto;
+  display: block;
+  margin-left: -70px;
+}
+
 
 .nav-links a {
   declared: none;
@@ -156,8 +188,58 @@ body {
   background-color: var(--black-secondary);
   padding: 30px;
   border-left: 4px solid var(--green-primary);
+  border-radius: 4px;
+  text-align: center;
+  color: var(--text-light);
+  text-decoration: none;
 }
 
-.service-card h3 {
+.service-card h3,
+.service-card p {
   margin-bottom: 10px;
+  color: var(--text-light);
 }
+
+.service-card:hover {
+  background-color: #222;
+  transition: background-color 0.2s ease;
+}
+/* PARTNERS SECTION */
+.partners {
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.section-intro {
+  max-width: 700px;
+  margin: 20px auto 60px;
+  color: #cfcfcf;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+
+.partner-card {
+  background-color: var(--black-secondary);
+  padding: 40px 20px;
+  font-weight: bold;
+  border-bottom: 3px solid var(--green-primary);
+}
+
+.service-detail {
+  padding: 80px 5%;
+  max-width: 900px;
+}
+
+.service-list {
+  margin-top: 30px;
+}
+
+.service-list li {
+  margin-bottom: 10px;
+  color: #cfcfcf;
+}
+

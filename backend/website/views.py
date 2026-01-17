@@ -15,3 +15,16 @@ def projects(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def cyber_security(request):
+    return render(request, 'services/cyber_security.html')
+
+def network_security(request):
+    return render(request, 'services/network_security.html')
+
+def collaboration(request):
+    return render(request, 'services/collaboration.html')
+
+def digital_transformation(request):
+    return render(request, 'services/digital_transformation.html')
+
