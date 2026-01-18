@@ -119,45 +119,249 @@
   }
 })();
 
-// Partner cards reveal animation
+// Partners Carousel with Auto-rotation
 (function() {
-  if (typeof IntersectionObserver === 'undefined') {
-    return;
-  }
-
-  const partnerCards = document.querySelectorAll('.partner-card');
+  const carousel = document.querySelector('.partners-carousel');
+  const track = document.querySelector('.partners-track');
+  const prevBtn = document.querySelector('.carousel-btn-prev');
+  const nextBtn = document.querySelector('.carousel-btn-next');
+  const dots = document.querySelectorAll('.carousel-dot');
   
-  const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry, index) {
-      if (entry.isIntersecting) {
-        setTimeout(function() {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }, index * 100);
+  if (!carousel || !track) return;
+  
+  const cards = track.querySelectorAll('.partner-card');
+  const totalCards = cards.length;
+  let currentIndex = 0;
+  let autoRotateInterval = null;
+  const autoRotateDelay = 4000; // 4 seconds
+  
+  function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(track).gap) || 32;
+    const translateX = -(currentIndex * (cardWidth + gap));
+    track.style.transform = `translateX(${translateX}px)`;
+    
+    // Update dots
+    dots.forEach(function(dot, index) {
+      if (index === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
       }
     });
-  }, observerOptions);
-
-  function initPartnerReveals() {
-    partnerCards.forEach(function(card) {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(card);
+  }
+  
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalCards;
+    updateCarousel();
+  }
+  
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+    updateCarousel();
+  }
+  
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+    resetAutoRotate();
+  }
+  
+  function startAutoRotate() {
+    autoRotateInterval = setInterval(nextSlide, autoRotateDelay);
+  }
+  
+  function stopAutoRotate() {
+    if (autoRotateInterval) {
+      clearInterval(autoRotateInterval);
+      autoRotateInterval = null;
+    }
+  }
+  
+  function resetAutoRotate() {
+    stopAutoRotate();
+    startAutoRotate();
+  }
+  
+  // Event listeners
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      nextSlide();
+      resetAutoRotate();
     });
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPartnerReveals);
-  } else {
-    initPartnerReveals();
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      prevSlide();
+      resetAutoRotate();
+    });
   }
+  
+  dots.forEach(function(dot, index) {
+    dot.addEventListener('click', function() {
+      goToSlide(index);
+    });
+  });
+  
+  // Pause on hover
+  if (carousel) {
+    carousel.addEventListener('mouseenter', stopAutoRotate);
+    carousel.addEventListener('mouseleave', startAutoRotate);
+  }
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (carousel && carousel.closest('.partners').matches(':hover')) {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoRotate();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoRotate();
+      }
+    }
+  });
+  
+  // Initialize
+  function initCarousel() {
+    updateCarousel();
+    startAutoRotate();
+    
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
+        updateCarousel();
+      }, 250);
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  } else {
+    initCarousel();
+  }
+})();
+
+// Matrix Effect
+(function() {
+  const canvas = document.getElementById('matrix-canvas');
+  if (!canvas) return;
+  
+  const container = canvas.closest('.partners-carousel-container');
+  if (!container) return;
+  
+  const ctx = canvas.getContext('2d');
+  let animationFrameId = null;
+  let mouseX = 0;
+  let mouseY = 0;
+  
+  // Matrix characters (tech-related)
+  const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+  const charArray = chars.split('');
+  
+  // Settings
+  const fontSize = 14;
+  const columns = [];
+  let columnCount = 0;
+  
+  function resizeCanvas() {
+    const rect = container.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+    columnCount = Math.floor(canvas.width / fontSize);
+    
+    // Initialize columns
+    columns.length = 0;
+    for (let i = 0; i < columnCount; i++) {
+      columns[i] = {
+        y: Math.random() * -canvas.height,
+        speed: 0.5 + Math.random() * 0.5,
+        char: charArray[Math.floor(Math.random() * charArray.length)]
+      };
+    }
+  }
+  
+  function drawMatrix() {
+    // Fade effect
+    ctx.fillStyle = 'rgba(11, 11, 11, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Calculate mouse influence
+    const mouseInfluence = {
+      x: mouseX / canvas.width,
+      y: mouseY / canvas.height
+    };
+    
+    // Draw columns
+    ctx.font = fontSize + 'px monospace';
+    
+    for (let i = 0; i < columnCount; i++) {
+      const column = columns[i];
+      const x = i * fontSize;
+      
+      // Mouse influence on speed
+      const distanceFromMouse = Math.abs((x / canvas.width) - mouseInfluence.x);
+      const speedMultiplier = 1 + (1 - distanceFromMouse) * 0.5;
+      
+      // Draw character
+      const charIndex = Math.floor(Math.random() * charArray.length);
+      const char = charArray[charIndex];
+      
+      // Opacity based on position and mouse proximity
+      const opacity = Math.min(1, 0.3 + (1 - distanceFromMouse) * 0.7);
+      ctx.fillStyle = `rgba(57, 178, 127, ${opacity})`;
+      
+      ctx.fillText(char, x, column.y);
+      
+      // Update position
+      column.y += column.speed * speedMultiplier;
+      
+      // Reset if off screen
+      if (column.y > canvas.height) {
+        column.y = Math.random() * -200;
+        column.char = charArray[Math.floor(Math.random() * charArray.length)];
+      }
+    }
+    
+    animationFrameId = requestAnimationFrame(drawMatrix);
+  }
+  
+  function handleMouseMove(e) {
+    const rect = container.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  }
+  
+  function initMatrix() {
+    resizeCanvas();
+    drawMatrix();
+    
+    container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('mouseleave', function() {
+      mouseX = canvas.width / 2;
+      mouseY = canvas.height / 2;
+    });
+    
+    window.addEventListener('resize', function() {
+      resizeCanvas();
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMatrix);
+  } else {
+    initMatrix();
+  }
+  
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', function() {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+  });
 })();
 
 // Enhanced button hover micro-interactions
