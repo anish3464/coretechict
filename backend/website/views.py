@@ -13,9 +13,6 @@ def partners(request):
 def projects(request):
     return render(request, 'projects.html')
 
-def contact(request):
-    return render(request, 'contact.html')
-
 def cyber_security(request):
     return render(request, 'services/cyber_security.html')
 

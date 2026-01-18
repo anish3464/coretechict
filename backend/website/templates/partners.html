@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <section class="partners">
@@ -8,11 +9,31 @@
     </p>
 
     <div class="partners-grid">
-        <div class="partner-card">Cisco</div>
-        <div class="partner-card">Huawei</div>
-        <div class="partner-card">Fortinet</div>
-        <div class="partner-card">HP</div>
-        <div class="partner-card">Dell</div>
+        <div class="partner-card partner-cisco">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                <text x="10" y="28" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="currentColor">Cisco</text>
+            </svg>
+        </div>
+        <div class="partner-card partner-huawei">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                <text x="10" y="28" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="currentColor">Huawei</text>
+            </svg>
+        </div>
+        <div class="partner-card partner-fortinet">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                <text x="10" y="28" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="currentColor">Fortinet</text>
+            </svg>
+        </div>
+        <div class="partner-card partner-hp">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                <text x="10" y="28" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="currentColor">HP</text>
+            </svg>
+        </div>
+        <div class="partner-card partner-dell">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                <text x="10" y="28" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="currentColor">Dell</text>
+            </svg>
+        </div>
     </div>
 </section>
 
