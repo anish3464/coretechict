@@ -6,5 +6,5 @@ db.sqlite3
 /media/
 .vscode/
 .idea/
-/coretechict/venv/
+venv/
 .env.example
