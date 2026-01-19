@@ -1,17 +1,303 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
+<!-- Hero Section -->
 <section class="hero">
+    <div class="hero-background">
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-particles" id="particles-js"></div>
+    </div>
     <div class="hero-content">
-        <h1>Secure. Scalable. Intelligent ICT Solutions.</h1>
-        <p>
-            Core Technology Solutions delivers enterprise-grade ICT services,
-            cyber security, and digital transformation tailored to modern business needs.
+        <h1 class="hero-headline">
+            Enterprise ICT Solutions for Modern Business
+        </h1>
+        <p class="hero-subheading">
+            Secure infrastructure, intelligent networks, and digital transformation for organizations that demand excellence.
         </p>
-        <a href="/services/" class="btn-primary">Explore Services</a>
+        
+        <div class="hero-capabilities">
+            <span class="capability-item">Cyber Security</span>
+            <span class="capability-divider">•</span>
+            <span class="capability-item">Network Security</span>
+            <span class="capability-divider">•</span>
+            <span class="capability-item">Collaboration</span>
+            <span class="capability-divider">•</span>
+            <span class="capability-item">Digital Transformation</span>
+            <span class="capability-divider">•</span>
+            <span class="capability-item">Consultancy</span>
+        </div>
+
+        <div class="hero-actions">
+            <a href="/services/" class="btn-primary btn-large">
+                <span>Explore Services</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <a href="/contact/" class="btn-secondary btn-large">
+                <span>Talk to an Expert</span>
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Client Satisfaction</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support Available</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
     </div>
 </section>
 
+<!-- About Section -->
+<section class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <div class="section-badge">About Core Technology</div>
+                <h2>Transforming Businesses Through Technology Excellence</h2>
+                <p class="about-description">
+                    With over a decade of experience in the ICT industry, Core Technology Solutions has been at the forefront of digital innovation. We specialize in delivering comprehensive technology solutions that drive business growth and operational efficiency.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-text">
+                            <h4>Strategic Vision</h4>
+                            <p>Long-term technology roadmaps aligned with business objectives</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-text">
+                            <h4>Security First</h4>
+                            <p>Enterprise-grade security measures protecting your digital assets</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">
+                            <h4>Rapid Deployment</h4>
+                            <p>Quick implementation with minimal disruption to operations</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/about/" class="btn-secondary">Learn More About Us</a>
+            </div>
+            <div class="about-image">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Technology Solutions" class="about-img">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <span class="overlay-text">Innovation</span>
+                            <span class="overlay-text">Excellence</span>
+                            <span class="overlay-text">Results</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="services-preview">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Our Services</div>
+            <h2>Comprehensive ICT Solutions</h2>
+            <p>Enterprise ICT solutions designed for security, performance, and scalability. Delivered with industry-standard practices and technologies.</p>
+        </div>
+        <div class="services-grid">
+            <a href="/services/cyber-security/" class="service-card service-card-security">
+                <div class="service-icon">🛡️</div>
+                <h3>Cyber Security</h3>
+                <p>End-to-end protection for modern digital environments with advanced threat detection and response.</p>
+                <div class="service-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="/services/network-security/" class="service-card service-card-network">
+                <div class="service-icon">🔗</div>
+                <h3>Network Security</h3>
+                <p>Secure, high-performance enterprise networks with comprehensive monitoring and management.</p>
+                <div class="service-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="/services/collaboration/" class="service-card service-card-collaboration">
+                <div class="service-icon">👥</div>
+                <h3>Collaboration Solutions</h3>
+                <p>Digital workplaces and smart meeting rooms enabling seamless team collaboration.</p>
+                <div class="service-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="/services/digital-transformation/" class="service-card service-card-transformation">
+                <div class="service-icon">↗️</div>
+                <h3>Digital Transformation</h3>
+                <p>Technology-driven business modernization with cloud migration and automation solutions.</p>
+                <div class="service-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        <div class="services-cta">
+            <a href="/services/" class="btn-primary">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Why Choose Us</div>
+            <h2>Your Trusted ICT Partner</h2>
+            <p>Experience the difference with our proven track record and commitment to excellence.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">🏆</div>
+                <h3>Industry Leaders</h3>
+                <p>Recognized as a leading ICT solutions provider with certifications from major technology vendors.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">🔧</div>
+                <h3>Expert Team</h3>
+                <p>Certified professionals with decades of combined experience in enterprise technology solutions.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">⚡</div>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock technical support ensuring your systems remain operational at all times.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">📈</div>
+                <h3>Proven Results</h3>
+                <p>Measurable improvements in efficiency, security, and business outcomes for our clients.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">🔒</div>
+                <h3>Security Focused</h3>
+                <p>Comprehensive security measures protecting your data and systems from emerging threats.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">🌍</div>
+                <h3>Global Reach</h3>
+                <p>Serving clients worldwide with localized support and international best practices.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Client Testimonials</div>
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by leading organizations across various industries.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Core Technology Solutions transformed our entire IT infrastructure. Their expertise in cyber security and digital transformation has been invaluable to our business growth."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="John Smith">
+                    </div>
+                    <div class="author-info">
+                        <h4>John Smith</h4>
+                        <span>CTO, TechCorp Industries</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The team's professionalism and technical expertise are unmatched. They delivered our network security solution on time and exceeded all expectations."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <span>IT Director, Global Finance Corp</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Outstanding service and support. Core Technology Solutions helped us achieve our digital transformation goals while maintaining the highest security standards."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Michael Chen">
+                    </div>
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <span>CEO, Innovate Solutions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how we can help you achieve your technology goals and drive business success.</p>
+            <div class="cta-actions">
+                <a href="/contact/" class="btn-primary btn-large">
+                    <span>Start Your Project</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="tel:+1234567890" class="btn-secondary btn-large">
+                    <span>Call Us Now</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
