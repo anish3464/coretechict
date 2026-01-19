@@ -119,130 +119,80 @@
   }
 })();
 
-// Partners Carousel with Auto-rotation
+// Partners Infinite Carousel
 (function() {
   const carousel = document.querySelector('.partners-carousel');
   const track = document.querySelector('.partners-track');
-  const prevBtn = document.querySelector('.carousel-btn-prev');
-  const nextBtn = document.querySelector('.carousel-btn-next');
-  const dots = document.querySelectorAll('.carousel-dot');
-  
+
   if (!carousel || !track) return;
-  
+
   const cards = track.querySelectorAll('.partner-card');
-  const totalCards = cards.length;
-  let currentIndex = 0;
-  let autoRotateInterval = null;
-  const autoRotateDelay = 4000; // 4 seconds
-  
-  function updateCarousel() {
+  const totalCards = cards.length / 2; // Original cards count (duplicated)
+  let currentPosition = 0;
+  let animationFrameId = null;
+  const speed = 0.5; // Pixels per frame
+
+  function animate() {
+    currentPosition -= speed;
+
+    // Reset position when reaching the duplicated section
     const cardWidth = cards[0].offsetWidth;
     const gap = parseInt(getComputedStyle(track).gap) || 32;
-    const translateX = -(currentIndex * (cardWidth + gap));
-    track.style.transform = `translateX(${translateX}px)`;
-    
-    // Update dots
-    dots.forEach(function(dot, index) {
-      if (index === currentIndex) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
+    const resetPoint = -(totalCards * (cardWidth + gap));
+
+    if (currentPosition <= resetPoint) {
+      currentPosition = 0;
+    }
+
+    track.style.transform = `translateX(${currentPosition}px)`;
+    animationFrameId = requestAnimationFrame(animate);
   }
-  
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalCards;
-    updateCarousel();
-  }
-  
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-    updateCarousel();
-  }
-  
-  function goToSlide(index) {
-    currentIndex = index;
-    updateCarousel();
-    resetAutoRotate();
-  }
-  
-  function startAutoRotate() {
-    autoRotateInterval = setInterval(nextSlide, autoRotateDelay);
-  }
-  
-  function stopAutoRotate() {
-    if (autoRotateInterval) {
-      clearInterval(autoRotateInterval);
-      autoRotateInterval = null;
+
+  function startAnimation() {
+    if (!animationFrameId) {
+      animate();
     }
   }
-  
-  function resetAutoRotate() {
-    stopAutoRotate();
-    startAutoRotate();
+
+  function stopAnimation() {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
   }
-  
-  // Event listeners
-  if (nextBtn) {
-    nextBtn.addEventListener('click', function() {
-      nextSlide();
-      resetAutoRotate();
-    });
-  }
-  
-  if (prevBtn) {
-    prevBtn.addEventListener('click', function() {
-      prevSlide();
-      resetAutoRotate();
-    });
-  }
-  
-  dots.forEach(function(dot, index) {
-    dot.addEventListener('click', function() {
-      goToSlide(index);
-    });
-  });
-  
+
   // Pause on hover
   if (carousel) {
-    carousel.addEventListener('mouseenter', stopAutoRotate);
-    carousel.addEventListener('mouseleave', startAutoRotate);
+    carousel.addEventListener('mouseenter', stopAnimation);
+    carousel.addEventListener('mouseleave', startAnimation);
   }
-  
-  // Keyboard navigation
-  document.addEventListener('keydown', function(e) {
-    if (carousel && carousel.closest('.partners').matches(':hover')) {
-      if (e.key === 'ArrowLeft') {
-        prevSlide();
-        resetAutoRotate();
-      } else if (e.key === 'ArrowRight') {
-        nextSlide();
-        resetAutoRotate();
-      }
-    }
-  });
-  
+
   // Initialize
   function initCarousel() {
-    updateCarousel();
-    startAutoRotate();
-    
+    startAnimation();
+
     // Handle window resize
     let resizeTimeout;
     window.addEventListener('resize', function() {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(function() {
-        updateCarousel();
+        // Reset position on resize to prevent misalignment
+        currentPosition = 0;
+        track.style.transform = `translateX(${currentPosition}px)`;
       }, 250);
     });
   }
-  
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCarousel);
   } else {
     initCarousel();
   }
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', function() {
+    stopAnimation();
+  });
 })();
 
 // Matrix Effect

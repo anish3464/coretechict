@@ -899,10 +899,10 @@ html {
 }
 
 .partner-card {
-  background-color: var(--black-secondary);
+  background: linear-gradient(135deg, #ffffff 0%, var(--green-primary) 100%);
   padding: var(--spacing-xl) var(--spacing-md);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border: 2px solid var(--green-primary);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -912,6 +912,7 @@ html {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .partner-card::before {
