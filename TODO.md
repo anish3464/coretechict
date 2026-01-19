@@ -1,12 +1,7 @@
-# Services Page UI/UX Improvements
+# Partners Page Improvement Tasks
 
-## Tasks
-- [x] Replace CSS-drawn service icons with cleaner, more professional SVG-style icons using Unicode symbols or better clip-paths
-- [x] Change service card hover effect from green background fill to subtle border glow and shadow for enterprise feel
-- [x] Test the changes for visual consistency and responsiveness
-
-## Implementation Details
-- Update `.service-icon` and related pseudo-element styles in main.css
-- Modify `.service-card:hover` effects to use glow and shadow instead of background fill
-- Ensure icons are scalable and look professional on all screen sizes
-- Django development server running at http://127.0.0.1:8000/ for testing
+- [x] Modify partners.html: Remove partner-card div wrappers and place partner-logo images directly in partners-track
+- [x] Update main.css: Remove partner-card related styles and add subtle hover effects (opacity, scale, shadow) to partner-logo
+- [x] Adjust spacing and alignment for logos without containers
+- [x] Verify carousel functionality and logo alignment
+- [x] Test hover effects for subtlety

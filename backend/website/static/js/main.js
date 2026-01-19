@@ -126,8 +126,8 @@
 
   if (!carousel || !track) return;
 
-  const cards = track.querySelectorAll('.partner-card');
-  const totalCards = cards.length / 2; // Original cards count (duplicated)
+  const logos = track.querySelectorAll('.partner-logo');
+  const totalLogos = logos.length / 2; // Original logos count (duplicated)
   let currentPosition = 0;
   let animationFrameId = null;
   const speed = 0.5; // Pixels per frame
@@ -136,9 +136,9 @@
     currentPosition -= speed;
 
     // Reset position when reaching the duplicated section
-    const cardWidth = cards[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(track).gap) || 32;
-    const resetPoint = -(totalCards * (cardWidth + gap));
+    const logoWidth = logos[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(track).gap) || 48;
+    const resetPoint = -(totalLogos * (logoWidth + gap));
 
     if (currentPosition <= resetPoint) {
       currentPosition = 0;
