@@ -9,9 +9,6 @@
     </p>
 
     <div class="partners-carousel-container">
-        <!-- Matrix Effect Canvas -->
-        <canvas id="matrix-canvas" class="matrix-canvas"></canvas>
-        
         <!-- Carousel Wrapper -->
         <div class="partners-carousel-wrapper">
             <button class="carousel-btn carousel-btn-prev" aria-label="Previous partner">
@@ -19,44 +16,34 @@
                     <path d="M15 18l-6-6 6-6"/>
                 </svg>
             </button>
-            
+
             <div class="partners-carousel">
                 <div class="partners-track">
-                    <div class="partner-card partner-cisco">
-                        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                            <text x="10" y="28" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="currentColor">Cisco</text>
-                        </svg>
+                    <div class="partner-card">
+                        <img src="{% static 'images/cisco.png' %}" alt="Cisco" class="partner-logo">
                     </div>
-                    <div class="partner-card partner-huawei">
-                        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                            <text x="10" y="28" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="currentColor">Huawei</text>
-                        </svg>
+                    <div class="partner-card">
+                        <img src="{% static 'images/huawei.png' %}" alt="Huawei" class="partner-logo">
                     </div>
-                    <div class="partner-card partner-fortinet">
-                        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                            <text x="10" y="28" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="currentColor">Fortinet</text>
-                        </svg>
+                    <div class="partner-card">
+                        <img src="{% static 'images/fortinet.png' %}" alt="Fortinet" class="partner-logo">
                     </div>
-                    <div class="partner-card partner-hp">
-                        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                            <text x="10" y="28" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="currentColor">HP</text>
-                        </svg>
+                    <div class="partner-card">
+                        <img src="{% static 'images/hp.png' %}" alt="HP" class="partner-logo">
                     </div>
-                    <div class="partner-card partner-dell">
-                        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                            <text x="10" y="28" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="currentColor">Dell</text>
-                        </svg>
+                    <div class="partner-card">
+                        <img src="{% static 'images/dell.png' %}" alt="Dell" class="partner-logo">
                     </div>
                 </div>
             </div>
-            
+
             <button class="carousel-btn carousel-btn-next" aria-label="Next partner">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 18l6-6-6-6"/>
                 </svg>
             </button>
         </div>
-        
+
         <!-- Carousel Dots -->
         <div class="carousel-dots">
             <button class="carousel-dot active" data-index="0" aria-label="Go to partner 1"></button>
