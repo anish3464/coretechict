@@ -190,7 +190,7 @@ section {
 
 .navbar {
   background-color: var(--bg-primary);
-  height: 90px;
+  height: 80px;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -211,13 +211,18 @@ section {
 
 .nav-container {
   width: 100%;
-  max-width: 1400px;
-  padding: 0 var(--spacing-xl);
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  padding: 0 var(--spacing-lg);
+  margin: 0;
+}
+
+.nav-logo {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-logo a {
@@ -228,6 +233,8 @@ section {
   display: flex;
   align-items: center;
   transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-logo a:hover {
@@ -246,6 +253,7 @@ section {
   margin: 0;
   padding: 0;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .nav-logo img {
@@ -255,24 +263,12 @@ section {
   object-fit: contain;
   transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(44, 44, 44, 0.08));
-} 
-.nav-container {
-  padding-left: 0 ;
 }
-.nav-logo {
-  margin-left: 0 ;
-  padding-left: 0 ;
-}
-.nav-logo a {
-  margin-left: 0 ;
-  padding-left: 0 ;
-}
-
 
 .nav-logo:hover img {
   opacity: 1;
-  transform: scale(1.38);
-  filter: drop-shadow(0 4px 16px rgba(57,178,127,0.2));
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 12px rgba(57,178,127,0.2));
   transition: opacity 0.3s, transform 0.3s cubic-bezier(.4,0,.2,1), filter 0.3s;
 }
 
@@ -315,8 +311,8 @@ section {
 
 .footer {
   background-color: #ede7df;
-  padding: var(--spacing-3xl) 0 var(--spacing-lg);
-  margin-top: var(--spacing-3xl);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
   border-top: 2px solid var(--green-primary);
   position: relative;
   transition: background-color 0.3s ease;
@@ -335,28 +331,27 @@ section {
 .footer-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--spacing-xl);
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-2xl);
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-lg);
   align-items: start;
-  padding-top: var(--spacing-xl);
 }
 
 .footer-brand {
-  max-width: 300px;
+  max-width: none;
 }
 
 .footer h3 {
-  margin-bottom: var(--spacing-md);
-  color: var(--green-primary);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-dark);
   font-size: var(--font-size-xl);
   font-weight: 600;
 }
 
 .footer h4 {
-  margin-bottom: var(--spacing-md);
-  color: var(--green-primary);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-dark);
   font-size: var(--font-size-lg);
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -365,16 +360,21 @@ section {
 .footer-brand p {
   font-size: var(--font-size-base);
   color: var(--text-medium);
-  line-height: var(--line-height-relaxed);
-  margin-bottom: 0;
-  letter-spacing: 0.3px;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-sm);
+  max-width: 100%;
 }
 
 .footer p {
   font-size: var(--font-size-sm);
   color: var(--text-medium);
-  line-height: 1.7;
+  line-height: 1.6;
   margin-bottom: var(--spacing-sm);
+}
+
+.footer-contact p strong {
+  color: var(--text-dark);
+  font-weight: 600;
 }
 
 .footer-services ul {
@@ -386,7 +386,7 @@ section {
 .footer-services li {
   font-size: var(--font-size-sm);
   color: var(--text-medium);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
   line-height: 1.7;
   padding-left: 0;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -472,16 +472,11 @@ section {
 
 .footer-bottom {
   text-align: center;
-  margin-top: var(--spacing-2xl);
+  margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);
   border-top: 1px solid rgba(44, 44, 44, 0.1);
   font-size: var(--font-size-xs);
   color: var(--text-medium);
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--spacing-xl);
-  padding-right: var(--spacing-xl);
   transition: color 0.3s ease;
 }
 
@@ -550,10 +545,11 @@ html {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: var(--spacing-3xl) var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-lg);
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   position: relative;
   overflow: hidden;
+  margin-top: -2px;
 }
 
 .hero-background {
