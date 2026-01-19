@@ -820,8 +820,8 @@ html {
 
 .btn-primary:hover {
   background-color: var(--green-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(57, 178, 127, 0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(57, 178, 127, 0.18);
 }
 
 .btn-primary:hover::before {
@@ -1052,9 +1052,9 @@ html {
 
 .service-card:hover {
   background-color: var(--bg-primary);
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   border-color: var(--green-primary);
-  box-shadow: 0 16px 32px rgba(57, 178, 127, 0.12), 0 6px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 24px rgba(57, 178, 127, 0.10), 0 4px 8px rgba(0, 0, 0, 0.04);
 }
 
 .service-card:hover::before {
@@ -2102,4 +2102,109 @@ a:focus-visible {
   margin-top: var(--spacing-md);
   width: auto;
   min-width: 160px;
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-badge,
+  .hero-headline,
+  .hero-subheading,
+  .hero-capabilities,
+  .hero-actions,
+  .hero-stats,
+  .hero-scroll {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .service-card,
+  .project-card,
+  .testimonial-card,
+  .why-item,
+  .partner-logo,
+  .carousel-btn,
+  .carousel-dot {
+    transition: none !important;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    transition: none !important;
+  }
+
+  .btn-primary::before {
+    transition: none !important;
+  }
+
+  .btn-secondary::before {
+    transition: none !important;
+  }
+
+  .nav-links a::after {
+    transition: none !important;
+  }
+
+  .footer-services li a::after,
+  .footer-contact a::after {
+    transition: none !important;
+  }
+
+  .service-icon {
+    transition: none !important;
+  }
+
+  .reveal-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .partners-track {
+    transition: none !important;
+  }
+
+  .scroll-line {
+    animation: none !important;
+  }
+}
+
+/* Performance optimizations with will-change */
+.service-card,
+.project-card,
+.testimonial-card,
+.why-item,
+.partner-logo,
+.carousel-btn,
+.carousel-dot,
+.btn-primary,
+.btn-secondary,
+.nav-links a,
+.footer-services li a,
+.footer-contact a {
+  will-change: transform;
+}
+
+.service-card:hover,
+.project-card:hover,
+.testimonial-card:hover,
+.why-item:hover,
+.partner-logo:hover,
+.carousel-btn:hover,
+.carousel-dot:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.nav-links a:hover,
+.footer-services li a:hover,
+.footer-contact a:hover {
+  will-change: transform, box-shadow;
 }
