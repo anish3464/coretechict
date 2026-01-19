@@ -133,18 +133,18 @@
   const speed = 0.5; // Pixels per frame
 
   function animate() {
-    currentPosition -= speed;
+      currentPosition -= speed;
 
-    // Reset position when reaching the duplicated section
-    const logoWidth = logos[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(track).gap) || 48;
-    const resetPoint = -(totalLogos * (logoWidth + gap));
+      // Reset position when reaching the duplicated section
+      const logoWidth = logos[0].offsetWidth;
+      const gap = parseInt(getComputedStyle(track).gap) || 48;
+      const resetPoint = -(totalLogos * (logoWidth + gap));
 
-    if (currentPosition <= resetPoint) {
-      currentPosition = 0;
-    }
+      if (currentPosition <= resetPoint) {
+        currentPosition = 0;
+      }
 
-    track.style.transform = `translateX(${currentPosition}px)`;
+      track.style.transform = `translateX(${currentPosition}px)`;
     animationFrameId = requestAnimationFrame(animate);
   }
 
@@ -155,10 +155,44 @@
   }
 
   function stopAnimation() {
-    if (animationFrameId) {
-      cancelAnimationFrame(animationFrameId);
-      animationFrameId = null;
+    isPaused = true;
+  }
+
+  function moveCarousel(direction) {
+    const logoWidth = logos[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(track).gap) || 48;
+    const step = logoWidth + gap;
+
+    if (direction === 'next') {
+      currentPosition -= step;
+    } else if (direction === 'prev') {
+      currentPosition += step;
     }
+
+    // Ensure position stays within bounds
+    const maxPosition = 0;
+    const minPosition = -(totalLogos * step);
+
+    if (currentPosition > maxPosition) {
+      currentPosition = minPosition;
+    } else if (currentPosition < minPosition) {
+      currentPosition = maxPosition;
+    }
+
+    track.style.transform = `translateX(${currentPosition}px)`;
+  }
+
+  // Event listeners for manual controls
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      moveCarousel('prev');
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      moveCarousel('next');
+    });
   }
 
   // Pause on hover
@@ -191,7 +225,9 @@
 
   // Cleanup on page unload
   window.addEventListener('beforeunload', function() {
-    stopAnimation();
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
   });
 })();
 

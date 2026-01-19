@@ -905,7 +905,7 @@ html {
 /* SERVICES PREVIEW */
 
 .services-preview {
-  padding: var(--spacing-3xl) var(--spacing-lg);
+  padding: var(--spacing-2xl) var(--spacing-lg);
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -1634,6 +1634,11 @@ a:focus-visible {
 
 /* CTA SECTION */
 
+.services-cta {
+  text-align: center;
+  margin-top: var(--spacing-3xl);
+}
+
 .cta {
   padding: var(--spacing-3xl) var(--spacing-lg);
   background: linear-gradient(135deg, #39b27f 0%, #2d8f63 100%);
@@ -1854,6 +1859,7 @@ a:focus-visible {
   .footer-services li a:hover {
     transform: none;
   }
+
 
   .services-preview,
   .partners,
