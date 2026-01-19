@@ -43,13 +43,18 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Roboto, "Noto Sans", Arial, sans-serif;
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   background-color: var(--black-primary);
   color: var(--text-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: color 0.2s ease;
+}
+
+body:has(*:hover) {
+  --text-tint: rgba(57, 178, 127, 0.08);
 }
 
 a {
@@ -131,6 +136,11 @@ p {
   margin: 0 0 var(--spacing-md) 0;
   color: var(--text-secondary);
   line-height: var(--line-height-relaxed);
+  transition: color 0.3s ease;
+}
+
+p:hover {
+  color: var(--green-primary);
 }
 
 ul, ol {
@@ -141,6 +151,11 @@ ul, ol {
 li {
   color: var(--text-secondary);
   line-height: var(--line-height-relaxed);
+  transition: color 0.3s ease;
+}
+
+li:hover {
+  color: var(--green-primary);
 }
 
 /* Section Container */
