@@ -7,12 +7,6 @@ def home(request):
 def services(request):
     return render(request, 'services.html')
 
-def partners(request):
-    return render(request, 'partners.html')
-
-def projects(request):
-    return render(request, 'projects.html')
-
 def cyber_security(request):
     return render(request, 'services/cyber_security.html')
 
