@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mg48q1!ru=wfkkf!&@kx4dgo=&c+9oea3y_xj%*$yzsk$-q%#2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['gymnospermic-stepanie-integumentary.ngrok-free.dev', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['gymnospermic-stepanie-integumentary.ngrok-free.dev', '127.0.0.1', 'localhost','.onrender.com','coretechict.com','www.coretechict.com']
 
 
 # Application definition
