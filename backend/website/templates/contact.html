@@ -2,44 +2,72 @@
 {% block content %}
 
 <section class="contact">
-    <h2>Contact Us</h2>
-    <p class="section-intro">
-        Get in touch with our team to discuss your ICT requirements.
-    </p>
-
-    <form class="contact-form" method="post" novalidate>
-        {% csrf_token %}
-        
-        <div class="form-group">
-            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-            {{ form.name }}
-            <span class="form-error"></span>
-        </div>
-        <div class="form-group">
-            <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
-            {{ form.phone }}
-            <span class="form-error"></span>
+    <div class="contact-grid">
+        <div class="contact-text">
+            <h2>Contact us</h2>
+            <p class="section-intro">
+                Need to get in touch with us? Either fill out the form with your inquiry or find the <a
+                    href="mailto:info@coretechict.com">department email</a> you'd like to contact below.
+            </p>
         </div>
 
-        <div class="form-group">
-            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
-            {{ form.email }}
-            <span class="form-error"></span>
-        </div>
-        <div class="form-group">
-            <label for="{{ form.company.id_for_label }}">{{ form.company.label }}</label>
-            {{ form.company }}
-            <span class="form-error"></span>
-        </div>
+        <div class="contact-form-box">
+            <form class="contact-form" method="post" novalidate>
+                {% csrf_token %}
 
-        <div class="form-group">
-            <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
-            {{ form.message }}
-            <span class="form-error"></span>
-        </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="{{ form.first_name.id_for_label }}">First name</label>
+                        {{ form.first_name }}
+                        {% if form.first_name.errors %}
+                        <span class="form-error">{{ form.first_name.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.last_name.id_for_label }}">Last name</label>
+                        {{ form.last_name }}
+                        {% if form.last_name.errors %}
+                        <span class="form-error">{{ form.last_name.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                </div>
 
-        <button type="submit" class="btn-primary">Send Message</button>
-    </form>
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Email*</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                    <span class="form-error">{{ form.email.errors.0 }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.phone.id_for_label }}">Phone*</label>
+                    {{ form.phone }}
+                    {% if form.phone.errors %}
+                    <span class="form-error">{{ form.phone.errors.0 }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.company.id_for_label }}">Company</label>
+                    {{ form.company }}
+                    {% if form.company.errors %}
+                    <span class="form-error">{{ form.company.errors.0 }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.message.id_for_label }}">What can we help you with?</label>
+                    {{ form.message }}
+                    {% if form.message.errors %}
+                    <span class="form-error">{{ form.message.errors.0 }}</span>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 </section>
 
 {% endblock %}
