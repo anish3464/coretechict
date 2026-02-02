@@ -1,20 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
+<div class="service-detail">
+    <div class="service-hero">
+        <div class="service-hero-img">
+            <img src="{% static 'images/services/cyber_security.png' %}" alt="Cyber Security Solutions">
+        </div>
+        <div class="container">
+            <h1>Cyber Security Solutions</h1>
+            <p class="service-hero-subtitle">Advanced Protection for the Digital Age</p>
+        </div>
+    </div>
 
-<section class="service-detail">
-    <h2>Cyber Security</h2>
-    <p>
-        Comprehensive security solutions that protect your systems, networks, and data from evolving threats. 
-        We implement industry best practices and proven technologies tailored to your environment and risk profile.
-    </p>
+    <div class="container service-content">
+        <div class="service-overview">
+            <h2>Securing Your Business</h2>
+            <p>Our comprehensive Cyber Security services provide end-to-end protection for your digital assets. From
+                threat detection to compliance management, we ensure your organization is resilient against modern cyber
+                threats.</p>
+        </div>
 
-    <ul class="service-list">
-        <li>Security architecture and infrastructure design</li>
-        <li>Endpoint protection and network defense</li>
-        <li>Firewall and next-generation security appliances</li>
-        <li>Threat assessment and vulnerability analysis</li>
-        <li>Compliance framework implementation and audit support</li>
-    </ul>
-</section>
-
+        <div class="service-capabilities">
+            <h3>Key Capabilities</h3>
+            <ul>
+                <li><strong>Threat Detection & Response:</strong> 24/7 monitoring and rapid incident response.</li>
+                <li><strong>Vulnerability Assessments:</strong> Identifying and mitigating risks before they are
+                    exploited.</li>
+                <li><strong>Network Security:</strong> Next-generation firewalls and intrusion prevention systems.</li>
+                <li><strong>Compliance Management:</strong> Ensuring adherence to local and international security
+                    standards.</li>
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}

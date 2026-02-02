@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="service-detail">
+    <div class="service-hero">
+        <div class="service-hero-img">
+            <img src="{% static 'images/services/datacenter_infrastructure.png' %}" alt="Datacenter Infrastructure">
+        </div>
+        <div class="container">
+            <h1>Datacenter Physical Infrastructure</h1>
+            <p class="service-hero-subtitle">The foundation of your digital assets</p>
+        </div>
+    </div>
+
+    <div class="container service-content">
+        <div class="service-overview">
+            <h2>Reliable Hosting Environments</h2>
+            <p>We specialize in the physical infrastructure of data centers, ensuring your critical IT equipment
+                operates in a secure, cooled, and powered environment designed for zero downtime.</p>
+        </div>
+
+        <div class="service-capabilities">
+            <h3>Key Capabilities</h3>
+            <ul>
+                <li><strong>Design & Build:</strong> Turnkey data center construction.</li>
+                <li><strong>Cooling Systems:</strong> Precision air conditioning and environmental controls.</li>
+                <li><strong>Power Distribution:</strong> Reliable UPS, generators, and PDU systems.</li>
+                <li><strong>Racks & Containment:</strong> Optimized airflow management and physical security.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

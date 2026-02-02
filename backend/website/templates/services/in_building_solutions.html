@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="service-detail">
+    <div class="service-hero">
+        <div class="service-hero-img">
+            <img src="{% static 'images/services/in_building_solutions.png' %}" alt="In-Building Solutions">
+        </div>
+        <div class="container">
+            <h1>In-Building Solutions</h1>
+            <p class="service-hero-subtitle">Enhanced indoor coverage and capacity</p>
+        </div>
+    </div>
+
+    <div class="container service-content">
+        <div class="service-overview">
+            <h2>Coverage Where It Matters</h2>
+            <p>Our In-Building Solutions (IBS) overcome signal blockage in large structures, ensuring seamless
+                connectivity for users inside airports, malls, high-rises, and stadiums.</p>
+        </div>
+
+        <div class="service-capabilities">
+            <h3>Key Capabilities</h3>
+            <ul>
+                <li><strong>DAS (Distributed Antenna Systems):</strong> Active and passive DAS deployment.</li>
+                <li><strong>Small Cell Deployment:</strong> Enhancing capacity in high-traffic indoor zones.</li>
+                <li><strong>Signal Survey & Design:</strong> Precision planning using iBwave and other tools.</li>
+                <li><strong>Multi-Operator Support:</strong> Neutral host solutions for all carriers.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="service-detail">
+    <div class="service-hero">
+        <div class="service-hero-img">
+            <img src="{% static 'images/services/fiber_infrastructure.png' %}" alt="Fiber & Duct Infrastructure">
+        </div>
+        <div class="container">
+            <h1>Fiber & Duct Infrastructure</h1>
+            <p class="service-hero-subtitle">High-speed connectivity backbone</p>
+        </div>
+    </div>
+
+    <div class="container service-content">
+        <div class="service-overview">
+            <h2>Seamless Connectivity</h2>
+            <p>We deliver end-to-end Fiber & Duct Infrastructure solutions, enabling high-speed data transmission for
+                cities, communities, and enterprises. Our networks are built for scalability and reliability.</p>
+        </div>
+
+        <div class="service-capabilities">
+            <h3>Key Capabilities</h3>
+            <ul>
+                <li><strong>Long Haul & Metro Networks:</strong> Connecting cities and regions with high-capacity fiber.
+                </li>
+                <li><strong>FTTx Deployment:</strong> Fiber to the Home/Business/Cabinet solutions.</li>
+                <li><strong>Civil Works & FOC Route Implementation:</strong> Comprehensive trenching and duct
+                    installation.</li>
+                <li><strong>Network Maintenance:</strong> 24/7 monitoring and rapid repair services.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

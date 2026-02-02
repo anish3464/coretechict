@@ -1,32 +1,92 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-<section class="services-preview">
-    <h2>Our Services</h2>
-    <p class="services-intro">
-        Enterprise ICT solutions built on security, reliability, and performance. We deliver proven technologies and proven results.
-    </p>
+<section class="services-page-section">
+    <div class="container">
+        <div class="features-header">
+            <span class="features-label">FEATURES</span>
+            <h2>Our Features & Services.</h2>
+        </div>
 
-    <div class="services-grid">
-        <a href="/services/cyber-security/" class="service-card service-card-security">
-            <h3>Cyber Security</h3>
-            <p>Threat prevention, detection, and response for enterprise environments.</p>
-        </a>
+        <div class="services-grid-new">
+            <!-- Cyber Security -->
+            <div class="service-card-new">
+                <div class="service-card-img">
+                    <img src="{% static 'images/services/cyber_security.png' %}" alt="Cyber Security">
+                </div>
+                <h3>Cyber Security</h3>
+                <p>Advanced threat protection, risk assessment, and security compliance for enterprise digital assets.
+                </p>
+                <a href="/services/cyber-security/" class="service-card-btn">MORE</a>
+            </div>
 
-        <a href="/services/network-security/" class="service-card service-card-network">
-            <h3>Network Security</h3>
-            <p>Secure, high-performance infrastructure and connectivity.</p>
-        </a>
+            <!-- Enterprise Networking -->
+            <div class="service-card-new">
+                <div class="service-card-img">
+                    <img src="{% static 'images/services/enterprise_networking.png' %}" alt="Enterprise Networking">
+                </div>
+                <h3>Enterprise Networking</h3>
+                <p>Scalable network infrastructure design, implementation, and management for global business
+                    connectivity.</p>
+                <a href="/services/enterprise-networking/" class="service-card-btn">MORE</a>
+            </div>
 
-        <a href="/services/collaboration/" class="service-card service-card-collaboration">
-            <h3>Collaboration Solutions</h3>
-            <p>Connected workplaces and unified communication platforms.</p>
-        </a>
+            <!-- Telecom Towers -->
+            <div class="service-card-new">
+                <div class="service-card-img">
+                    <img src="{% static 'images/services/telecom_towers.png' %}" alt="Telecom Towers & Sites">
+                </div>
+                <h3>Telecom Towers</h3>
+                <p>Complete infrastructure solutions for macro and micro telecom sites, ensuring wide coverage and
+                    stability.</p>
+                <a href="/services/telecom-towers/" class="service-card-btn">MORE</a>
+            </div>
 
-        <a href="/services/digital-transformation/" class="service-card service-card-transformation">
-            <h3>Digital Transformation</h3>
-            <p>Technology-driven modernization and business optimization.</p>
-        </a>
+            <!-- Fiber Infrastructure -->
+            <div class="service-card-new">
+                <div class="service-card-img">
+                    <img src="{% static 'images/services/fiber_infrastructure.png' %}"
+                        alt="Fiber & Duct Infrastructure">
+                </div>
+                <h3>Fiber Infrastructure</h3>
+                <p>High-capacity fiber optic networks and duct systems designed for seamless, high-speed connectivity.
+                </p>
+                <a href="/services/fiber-infrastructure/" class="service-card-btn">MORE</a>
+            </div>
+
+            <!-- In-Building Solutions -->
+            <div class="service-card-new">
+                <div class="service-card-img">
+                    <img src="{% static 'images/services/in_building_solutions.png' %}" alt="In-Building Solutions">
+                </div>
+                <h3>In-Building Solutions</h3>
+                <p>Optimized indoor coverage and capacity for large venues, commercial buildings, and complex
+                    environments.</p>
+                <a href="/services/in-building-solutions/" class="service-card-btn">MORE</a>
+            </div>
+
+            <!-- Datacenter Infrastructure -->
+            <div class="service-card-new">
+                <div class="service-card-img">
+                    <img src="{% static 'images/services/datacenter_infrastructure.png' %}"
+                        alt="Datacenter Infrastructure">
+                </div>
+                <h3>Datacenter Physical</h3>
+                <p>Physical infrastructure design and build for robust, scalable, and secure data center operations.</p>
+                <a href="/services/datacenter-infrastructure/" class="service-card-btn">MORE</a>
+            </div>
+
+            <!-- Power & Energy -->
+            <div class="service-card-new">
+                <div class="service-card-img">
+                    <img src="{% static 'images/services/power_energy.png' %}" alt="Power & Energy Solutions">
+                </div>
+                <h3>Power & Energy</h3>
+                <p>Reliable power systems including backup generators, UPS, and renewable energy integration.</p>
+                <a href="/services/power-energy/" class="service-card-btn">MORE</a>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}

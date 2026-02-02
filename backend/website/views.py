@@ -10,14 +10,23 @@ def services(request):
 def cyber_security(request):
     return render(request, 'services/cyber_security.html')
 
-def network_security(request):
-    return render(request, 'services/network_security.html')
+def enterprise_networking(request):
+    return render(request, 'services/enterprise_networking.html')
 
-def collaboration(request):
-    return render(request, 'services/collaboration.html')
+def telecom_towers(request):
+    return render(request, 'services/telecom_towers.html')
 
-def digital_transformation(request):
-    return render(request, 'services/digital_transformation.html')
+def fiber_infrastructure(request):
+    return render(request, 'services/fiber_infrastructure.html')
+
+def in_building_solutions(request):
+    return render(request, 'services/in_building_solutions.html')
+
+def datacenter_infrastructure(request):
+    return render(request, 'services/datacenter_infrastructure.html')
+
+def power_energy(request):
+    return render(request, 'services/power_energy.html')
 
 from .forms import ContactForm
 
