@@ -1,20 +1,34 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
+<div class="service-detail">
+    <div class="service-hero">
+        <div class="service-hero-img">
+            <img src="https://images.unsplash.com/photo-1460925895917-adf4e565db18?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Digital Transformation">
+        </div>
+        <div class="container">
+            <h1>Digital Transformation</h1>
+            <p class="service-hero-subtitle">Modernize Your Business with Technology</p>
+        </div>
+    </div>
 
-<section class="service-detail">
-    <h2>Digital Transformation</h2>
-    <p>
-        Technology modernization and process improvement for your business. We assess your current systems, 
-        develop a practical roadmap, and implement solutions that drive efficiency and capability.
-    </p>
+    <div class="container service-content">
+        <div class="service-overview">
+            <h2>Drive Your Digital Evolution</h2>
+            <p>Technology modernization and process improvement for your business. We assess your current systems, develop a practical roadmap, and implement solutions that drive efficiency, capability, and competitive advantage.</p>
+        </div>
 
-    <ul class="service-list">
-        <li>Technology assessment and planning</li>
-        <li>Cloud migration and hybrid infrastructure</li>
-        <li>Business process automation</li>
-        <li>Legacy system modernization</li>
-        <li>Implementation support and training</li>
-    </ul>
-</section>
-
+        <div class="service-capabilities">
+            <h3>Key Capabilities</h3>
+            <ul>
+                <li><strong>Technology Assessment:</strong> Comprehensive evaluation of current systems and business requirements.</li>
+                <li><strong>Cloud Migration:</strong> Strategic migration to cloud infrastructure and hybrid environments.</li>
+                <li><strong>Business Process Automation:</strong> Streamline operations and improve efficiency through automation.</li>
+                <li><strong>Legacy Modernization:</strong> Update and replace outdated systems with modern solutions.</li>
+                <li><strong>Implementation & Training:</strong> End-to-end deployment support and user enablement.</li>
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}
