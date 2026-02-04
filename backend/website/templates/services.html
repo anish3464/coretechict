@@ -2,13 +2,17 @@
 {% load static %}
 {% block content %}
 
+<div class="services-hero">
+    <div class="hero-content">
+        <span class="features-label">FEATURES & SERVICES</span>
+        <h1>Our Features & Services</h1>
+        <p>Comprehensive ICT solutions tailored for enterprise needs. From security to infrastructure, we've got you
+            covered.</p>
+    </div>
+</div>
+
 <section class="services-page-section">
     <div class="container">
-        <div class="features-header">
-            <span class="features-label">FEATURES</span>
-            <h2>Our Features & Services.</h2>
-        </div>
-
         <div class="services-grid-new">
             <!-- Cyber Security -->
             <div class="service-card-new">
@@ -32,40 +36,6 @@
                 <a href="/services/enterprise-networking/" class="service-card-btn">MORE</a>
             </div>
 
-            <!-- Telecom Towers -->
-            <div class="service-card-new">
-                <div class="service-card-img">
-                    <img src="{% static 'images/services/telecom_towers.png' %}" alt="Telecom Towers & Sites">
-                </div>
-                <h3>Telecom Towers</h3>
-                <p>Complete infrastructure solutions for macro and micro telecom sites, ensuring wide coverage and
-                    stability.</p>
-                <a href="/services/telecom-towers/" class="service-card-btn">MORE</a>
-            </div>
-
-            <!-- Fiber Infrastructure -->
-            <div class="service-card-new">
-                <div class="service-card-img">
-                    <img src="{% static 'images/services/fiber_infrastructure.png' %}"
-                        alt="Fiber & Duct Infrastructure">
-                </div>
-                <h3>Fiber Infrastructure</h3>
-                <p>High-capacity fiber optic networks and duct systems designed for seamless, high-speed connectivity.
-                </p>
-                <a href="/services/fiber-infrastructure/" class="service-card-btn">MORE</a>
-            </div>
-
-            <!-- In-Building Solutions -->
-            <div class="service-card-new">
-                <div class="service-card-img">
-                    <img src="{% static 'images/services/in_building_solutions.png' %}" alt="In-Building Solutions">
-                </div>
-                <h3>In-Building Solutions</h3>
-                <p>Optimized indoor coverage and capacity for large venues, commercial buildings, and complex
-                    environments.</p>
-                <a href="/services/in-building-solutions/" class="service-card-btn">MORE</a>
-            </div>
-
             <!-- Datacenter Infrastructure -->
             <div class="service-card-new">
                 <div class="service-card-img">
@@ -77,15 +47,6 @@
                 <a href="/services/datacenter-infrastructure/" class="service-card-btn">MORE</a>
             </div>
 
-            <!-- Power & Energy -->
-            <div class="service-card-new">
-                <div class="service-card-img">
-                    <img src="{% static 'images/services/power_energy.png' %}" alt="Power & Energy Solutions">
-                </div>
-                <h3>Power & Energy</h3>
-                <p>Reliable power systems including backup generators, UPS, and renewable energy integration.</p>
-                <a href="/services/power-energy/" class="service-card-btn">MORE</a>
-            </div>
         </div>
     </div>
 </section>

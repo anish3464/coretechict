@@ -2,32 +2,119 @@
 {% load static %}
 
 {% block content %}
-<div class="service-detail">
-    <div class="service-hero">
-        <div class="service-hero-img">
-            <img src="{% static 'images/services/enterprise_networking.png' %}" alt="Enterprise Networking">
-        </div>
-        <div class="container">
-            <h1>Enterprise Networking</h1>
-            <p class="service-hero-subtitle">Connectivity Without Compromise</p>
+<div class="service-subpage">
+    <!-- Hero Section -->
+    <div class="service-subpage-hero">
+        <div class="subpage-hero-container">
+            <div class="hero-left">
+                <div class="breadcrumbs">
+                    <a href="/">Home</a> <span>&gt;</span> <a href="/services/">Services</a> <span>&gt;</span> <span
+                        class="current">Enterprise Networking</span>
+                </div>
+                <div class="hero-badge-pill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <span>Professional Solutions</span>
+                </div>
+                <h1>Enterprise Networking</h1>
+                <p class="hero-subtitle">Connectivity Without Compromise</p>
+                <div class="hero-btn-group">
+                    <a href="/contact/" class="btn-white">Request a Quote</a>
+                    <a href="#overview" class="btn-outline-white">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-glass-card">
+                    <img src="{% static 'images/services/enterprise_networking.png' %}" alt="Enterprise Networking">
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="container service-content">
-        <div class="service-overview">
+    <!-- Overview Section -->
+    <div class="subpage-section" id="overview">
+        <div class="overview-header">
+            <span class="section-label">OVERVIEW</span>
             <h2>Robust Network Infrastructure</h2>
             <p>We design and deploy scalable enterprise networks that drive business performance. Our solutions ensure
                 seamless connectivity, high availability, and simplified management for your global operations.</p>
         </div>
+    </div>
 
-        <div class="service-capabilities">
-            <h3>Key Capabilities</h3>
-            <ul>
-                <li><strong>SD-WAN Solutions:</strong> Intelligent traffic routing for multi-site connectivity.</li>
-                <li><strong>LAN/WAN Design:</strong> High-performance switching and routing infrastructure.</li>
-                <li><strong>Wireless Mobility:</strong> Secure, high-speed Wi-Fi 6 protections.</li>
-                <li><strong>Network Automation:</strong> Streamlining operations with software-defined networking.</li>
-            </ul>
+    <!-- Capabilities Section -->
+    <div class="subpage-section" style="padding-top: 0;">
+        <div class="overview-header">
+            <span class="section-label">WHAT WE OFFER</span>
+            <h2>Key Capabilities</h2>
+        </div>
+        <div class="capabilities-grid">
+            <!-- Card 1 -->
+            <div class="capability-card">
+                <div class="check-icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3>SD-WAN Solutions</h3>
+                    <p>Intelligent traffic routing for multi-site connectivity with optimized application performance.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="capability-card">
+                <div class="check-icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3>LAN/WAN Design</h3>
+                    <p>High-performance switching and routing infrastructure built for reliability and scale.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="capability-card">
+                <div class="check-icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3>Wireless Mobility</h3>
+                    <p>Secure, high-speed Wi-Fi 6 deployments for seamless wireless connectivity across your
+                        organization.</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="capability-card">
+                <div class="check-icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3>Network Automation</h3>
+                    <p>Streamlining operations with software-defined networking and intelligent network management.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="subpage-bottom-cta">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let our experts help you implement the right solutions for your organization's unique needs.</p>
+        <div class="cta-buttons">
+            <a href="/contact/" class="btn-primary-large">Upgrade Your Network</a>
+            <a href="/services/" class="btn-outline-dark">Back to Services</a>
         </div>
     </div>
 </div>

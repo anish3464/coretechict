@@ -2,35 +2,118 @@
 {% load static %}
 
 {% block content %}
-<div class="service-detail">
-    <div class="service-hero">
-        <div class="service-hero-img">
-            <img src="{% static 'images/services/cyber_security.png' %}" alt="Cyber Security Solutions">
-        </div>
-        <div class="container">
-            <h1>Cyber Security Solutions</h1>
-            <p class="service-hero-subtitle">Advanced Protection for the Digital Age</p>
+<div class="service-subpage">
+    <!-- Hero Section -->
+    <div class="service-subpage-hero">
+        <div class="subpage-hero-container">
+            <div class="hero-left">
+                <div class="breadcrumbs">
+                    <a href="/">Home</a> <span>&gt;</span> <a href="/services/">Services</a> <span>&gt;</span> <span
+                        class="current">Cyber Security Solutions</span>
+                </div>
+                <div class="hero-badge-pill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <span>Professional Solutions</span>
+                </div>
+                <h1>Cyber Security Solutions</h1>
+                <p class="hero-subtitle">Advanced Protection for the Digital Age</p>
+                <div class="hero-btn-group">
+                    <a href="/contact/" class="btn-white">Request a Quote</a>
+                    <a href="#overview" class="btn-outline-white">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-glass-card">
+                    <img src="{% static 'images/services/cyber_security.png' %}" alt="Cyber Security">
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="container service-content">
-        <div class="service-overview">
+    <!-- Overview Section -->
+    <div class="subpage-section" id="overview">
+        <div class="overview-header">
+            <span class="section-label">OVERVIEW</span>
             <h2>Securing Your Business</h2>
             <p>Our comprehensive Cyber Security services provide end-to-end protection for your digital assets. From
                 threat detection to compliance management, we ensure your organization is resilient against modern cyber
                 threats.</p>
         </div>
+    </div>
 
-        <div class="service-capabilities">
-            <h3>Key Capabilities</h3>
-            <ul>
-                <li><strong>Threat Detection & Response:</strong> 24/7 monitoring and rapid incident response.</li>
-                <li><strong>Vulnerability Assessments:</strong> Identifying and mitigating risks before they are
-                    exploited.</li>
-                <li><strong>Network Security:</strong> Next-generation firewalls and intrusion prevention systems.</li>
-                <li><strong>Compliance Management:</strong> Ensuring adherence to local and international security
-                    standards.</li>
-            </ul>
+    <!-- Capabilities Section -->
+    <div class="subpage-section" style="padding-top: 0;">
+        <div class="overview-header">
+            <span class="section-label">WHAT WE OFFER</span>
+            <h2>Key Capabilities</h2>
+        </div>
+        <div class="capabilities-grid">
+            <!-- Card 1 -->
+            <div class="capability-card">
+                <div class="check-icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3>Threat Detection & Response</h3>
+                    <p>24/7 monitoring and rapid incident response.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="capability-card">
+                <div class="check-icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3>Vulnerability Assessments</h3>
+                    <p>Identifying and mitigating risks before they are exploited.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="capability-card">
+                <div class="check-icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3>Network Security</h3>
+                    <p>Next-generation firewalls and intrusion prevention systems.</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="capability-card">
+                <div class="check-icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3>Compliance Management</h3>
+                    <p>Ensuring adherence to local and international security standards.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="subpage-bottom-cta">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let our experts help you implement the right solutions for your organization's unique needs.</p>
+        <div class="cta-buttons">
+            <a href="/contact/" class="btn-primary-large">Get Secured</a>
+            <a href="/services/" class="btn-outline-dark">Back to Services</a>
         </div>
     </div>
 </div>
